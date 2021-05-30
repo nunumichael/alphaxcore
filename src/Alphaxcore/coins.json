@@ -1780,25 +1780,77 @@
         "explorerTxLink": "https://chainz.cryptoid.info/via/tx.dws?{0}.htm",
         "explorerAccountLink": "https://chainz.cryptoid.info/via/address.dws?{0}.htm"
     },
-    "xazab": {
-        "name": "Xazab",
-        "symbol": "XAZAB",
-        "family": "bitcoin",
-        "coinbaseHasher": {
-            "hash": "sha256d"
-        },
-        "headerHasher": {
-            "hash": "x11"
-        },
-        "blockHasher": {
-            "hash": "reverse",
-            "args": [ { "hash": "x11" } ]
-        },
-        "hasMasterNodes": true,
-        "explorerBlockLink": "https://explorer.xazab.xyz/insight/block/$height$",
-        "explorerTxLink": "https://explorer.xazab.xyz/insight/tx/{0}",
-        "explorerAccountLink": "https://explorer.xazab.xyz/insight/address/{0}"
-    },
+     "xazab-sha256": {
+	"name": "Xazab Sha256",
+	"canonicalName": "Xazab",
+	"symbol": "XAZAB",
+	"family": "bitcoin",
+	"coinbaseHasher": {
+		"hash": "sha256d"
+	},
+	"headerHasher": {
+		"hash": "sha256d"
+	},
+	"blockHasher": {
+		"hash": "reverse",
+		"args": [ { "hash": "sha256d" } ]
+	},
+	"hasMasterNodes": true,
+	"explorerBlockLink": "https://explorer.xazab.xyz/insight/blockheight/$height$",
+	"explorerTxLink": "https://explorer.xazab.xyz/insight/tx/{0}",
+	"explorerAccountLink": "https://explorer.xazab.xyz/insight/address/{0}"
+     },
+     "xazab-scrypt": {
+	"name": "Xazab Scrypt",
+	"canonicalName": "Xazab",
+	"symbol": "XAZAB",
+	"family": "bitcoin",
+	"coinbaseHasher": {
+		"hash": "sha256d"
+	},
+	"headerHasher": {
+		"hash": "scrypt",
+		"args": [ 1024, 1 ]
+	},
+	"blockHasher": {
+		"hash": "reverse",
+		"args": [ { "hash": "sha256d" } ]
+	},
+	"posBlockHasher": {
+		"hash": "reverse",
+		"args": [
+			{
+				"hash": "scrypt",
+				"args": [ 1024, 1 ]
+			}
+		]
+	},
+	"shareMultiplier": 65536,
+	"hasMasterNodes": true,
+	"explorerBlockLink": "https://explorer.xazab.xyz/insight/blockheight/$height$",
+	"explorerTxLink": "https://explorer.xazab.xyz/insight/tx/{0}",
+	"explorerAccountLink": "https://explorer.xazab.xyz/insight/address/{0}"
+     },
+     "xazab-x11": {
+	"name": "Xazab X11",
+	"canonicalName": "Xazab",
+	"symbol": "XAZAB",
+	"family": "bitcoin",
+	"coinbaseHasher": {
+		"hash": "sha256d"
+	},
+	"headerHasher": {
+		"hash": "x11"
+	},
+	"blockHasher": {
+		"hash": "reverse",
+		"args": [ { "hash": "sha256d" } ]
+	},
+	"hasMasterNodes": true,
+	"explorerBlockLink": "https://explorer.xazab.xyz/insight/blockheight/$height$",
+	"explorerTxLink": "https://explorer.xazab.xyz/insight/tx/{0}",
+	"explorerAccountLink": "https://explorer.xazab.xyz/insight/address/{0}"
+    }
     "yenten": {
         "name": "Yenten",
         "symbol": "YTN",
